@@ -1,0 +1,50 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-18 16:54+0000\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Douwe Pausma\n"
+"Language-Team: \n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/pretix_event_css_js/apps.py:16 src/pretix_event_css_js/signals.py:20
+#: src/pretix_event_css_js/templates/pretix_event_css_js/control_settings.html:5
+#: src/pretix_event_css_js/templates/pretix_event_css_js/control_settings.html:9
+msgid "Event CSS & JS"
+msgstr "Event-CSS & JS"
+
+#: src/pretix_event_css_js/apps.py:18
+msgid ""
+"Inject custom CSS and JavaScript into the presale pages of individual events."
+msgstr ""
+"Injecteer eigen CSS en JavaScript in de voorverkooppagina's van individuele evenementen."
+
+#: src/pretix_event_css_js/forms.py:9
+msgid "Custom CSS"
+msgstr "Eigen CSS"
+
+#: src/pretix_event_css_js/forms.py:11
+msgid ""
+"Custom CSS rules that will be loaded on every presale page of this event."
+msgstr ""
+"Eigen CSS-regels die op elke voorverkooppagina van dit evenement worden geladen."
+
+#: src/pretix_event_css_js/forms.py:15
+msgid "Custom JavaScript"
+msgstr "Eigen JavaScript"
+
+#: src/pretix_event_css_js/forms.py:18
+msgid ""
+"Custom JavaScript that will be loaded at the end of every presale page of "
+"this event. Use with care — incorrect code may break the shop experience for "
+"your customers."
+msgstr ""
+"Eigen JavaScript, dat aan het einde van elke voorverkooppagina van dit evenement wordt geladen. Gebruik met voorzichtigheid — onjuiste code kan de winkelervaring voor uw klanten verstoren."
+
+#: src/pretix_event_css_js/templates/pretix_event_css_js/control_settings.html:17
+msgid "Save"
+msgstr "Opslaan"

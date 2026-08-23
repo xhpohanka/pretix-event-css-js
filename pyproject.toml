@@ -4,8 +4,8 @@ build-backend = "hatchling.build"
 
 [project]
 name = "pretix-event-css-js"
-version = "1.0.0"
-description = "Inject custom CSS and JavaScript into the presale pages of individual events."
+version = "2.0.0"
+description = "Inject custom CSS and JavaScript into organizer and event presale pages."
 requires-python = ">=3.10"
 license = {text = "MIT"}
 keywords = ["pretix"]

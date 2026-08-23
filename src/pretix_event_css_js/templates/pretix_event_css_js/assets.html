@@ -1,0 +1,50 @@
+{% extends "pretixcontrol/organizers/base.html" %}
+{% load i18n %}
+{% load bootstrap3 %}
+
+{% block title %}{% trans "CSS & JS assets" %}{% endblock %}
+{% block content %}
+    <h1>{% trans "CSS & JS assets" %}</h1>
+    <p class="help-block">
+        {% trans "Upload fonts, images, or other files and reference them from organizer CSS with a relative URL such as assets/FILE-ID/." %}
+    </p>
+
+    <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+        {% csrf_token %}
+        {% bootstrap_form form layout="control" %}
+        <div class="form-group submit-group">
+            <button type="submit" class="btn btn-primary btn-save">{% trans "Upload" %}</button>
+        </div>
+    </form>
+
+    {% if assets %}
+        <h2>{% trans "Uploaded assets" %}</h2>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>{% trans "Filename" %}</th>
+                    <th>{% trans "Type" %}</th>
+                    <th>{% trans "URL for CSS" %}</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for asset in assets %}
+                    <tr>
+                        <td>{{ asset.filename }}</td>
+                        <td><code>{{ asset.guessed_content_type }}</code></td>
+                        <td><code>assets/{{ asset.pk }}/</code></td>
+                        <td class="text-right">
+                            <form method="post" action="{% url 'plugins:pretix_event_css_js:asset.delete' organizer=request.organizer.slug asset=asset.pk %}">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('{% trans "Delete this asset?" %}');">
+                                    {% trans "Delete" %}
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "pretixcontrol/organizers/base.html" %}
+{% load i18n %}
+{% load bootstrap3 %}
+
+{% block title %}{% trans "Organizer CSS & JS" %}{% endblock %}
+{% block content %}
+    <h1>{% trans "Organizer CSS & JS" %}</h1>
+    <p class="help-block">
+        {% trans "These styles and scripts are loaded on all public event pages of this organizer. Event-specific settings can be used for additional overrides." %}
+    </p>
+    <p>
+        <a class="btn btn-default" href="{% url 'plugins:pretix_event_css_js:assets' organizer=request.organizer.slug %}">
+            {% trans "Manage uploaded assets" %}
+        </a>
+    </p>
+    <form action="" method="post" class="form-horizontal">
+        {% csrf_token %}
+        {% bootstrap_form form layout="control" %}
+        <div class="form-group submit-group">
+            <button type="submit" class="btn btn-primary btn-save">
+                {% trans "Save" %}
+            </button>
+        </div>
+    </form>
+{% endblock %}

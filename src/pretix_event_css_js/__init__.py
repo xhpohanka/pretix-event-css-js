@@ -1,4 +1,4 @@
-__version__ = "1.0.0"
+__version__ = "2.0.0"
 
 try:
     from pretix_event_css_js.apps import PluginApp
